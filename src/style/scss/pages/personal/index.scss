@@ -1,0 +1,158 @@
+/*
+ * author: nancyzeng
+ * date:2019/4/15
+ */
+
+@charset "UTF-8";
+
+#personalPage {
+  min-height: 100%;
+  background-color: $clF5;
+
+  & .infoBox {
+    @include bgDecorate($redLight, $clF, null, 12px 22px, null);
+    @include displayFlex (flex, center, center);
+
+    & .left {
+      @include flexBasis(60px);
+
+      & .ratioBox {
+        @include ratioBox (100%, 100%, null, contain, #fffdfd, null);
+        border-radius: 60px;
+        overflow: hidden;
+        color: #fed2d2;
+
+        & .icon {
+          width: 40px;
+          height: 40px;
+          display: none;
+          @include blockMiddle(-20px, -20px);
+        }
+      }
+      & .ratioBox.active {
+        background-image: none;
+        & .icon {
+          display: block;
+        }
+      }
+    }
+
+    & .right {
+      margin-left: 10px;
+      line-height: 2;
+      flex-grow: 1;
+      @include clearfix;
+      @include textOverflow;
+
+      & .title {
+        @include font('PingFangBold', $fontSize + 2, $clF);
+        @include textOverflow;
+
+        & .desc {
+          @include floatBlock (left, 60%, left);
+          @include textOverflow;
+        }
+
+        & .action {
+          @include floatBlock (right, 40%, right);
+
+          & a {
+            position: relative;
+
+            & .icon {
+              width: 20px;
+              height: 20px;
+              color: $clF;
+              padding: 0 10px;
+              position: relative;
+            }
+
+          }
+
+          & a.tip:before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            background-color: $clF;
+            right: 0;
+            top: 0;
+          }
+        }
+      }
+
+      & .subTitle {
+        @include font(null, $fontSize - 1, $clF);
+        @include textOverflow;
+      }
+    }
+
+  }
+
+  & .entryBox {
+    background-color: $clF;
+    text-align: center;
+    padding: 8px 0;
+    line-height: 1.8;
+    @include textOverflow;
+
+    & .count {
+      @include font('PingFangBold', $fontSize, #333);
+      @include textOverflow;
+    }
+
+    & .desc {
+      @include font(null, $fontSize - 1, #999);
+      @include textOverflow;
+    }
+  }
+
+  & .cellBox {
+    margin-top: 5px;
+
+    & .cell {
+      height: 47px;
+      border-bottom: 1px $clF5 solid;
+      background-color: $clF;
+      font-size: $fontSize + 1;
+      padding: 0 14px 0 24px;
+      position: relative;
+      @include displayFlex (flex, flex-start, center);
+
+      & .svg {
+        & .icon {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      & .desc {
+        margin-left: 10px;
+        flex-grow: 1;
+        @include textOverflow;
+
+        & .tip {
+          margin-left: 10px;
+          @include font("PingFangBold", $fontSize - 1, $redDark);
+        }
+      }
+
+      & .action {
+        flex-shrink: 0;
+
+        & .text {
+          @include font(null, $fontSize - 2, $clF);
+          @include bgDecorate($redDark, null, 27px, 5px 13px, null);
+        }
+
+        & .icon {
+          width: 14px;
+          height: 14px;
+          color: #ccc;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,245 @@
+/*
+  author: lufeidd
+  date: 2019/4/15
+*/
+@charset "UTF-8";
+
+#remainPage{
+
+  .content{
+    padding: 50px;
+    color: $cl3;
+    text-align: center;
+    font-size: $fontSize + 6;
+
+    .money{
+      @include font("PingFangBlod", $fontSize + 26, null);
+    }
+
+    .currentRemain{
+      font-size: $fontSize - 2;
+      margin-top: 0px;
+    }
+
+    .detail{
+      margin-top: 85px;
+      font-size: $fontSize + 2;
+    }
+  }
+  .recharge{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+#accountPage{
+  background-color: $clF;
+  min-height: 100%;
+
+  .content{
+    padding: 45px 0 35px 0;
+    color: $cl3;
+    text-align: center;
+    font-size: $fontSize + 6;
+
+    .money{
+      @include font("PingFangBlod", $fontSize + 26, null);
+    }
+
+    .currentRemain{
+      font-size: $fontSize - 2;
+      margin-top: 0px;
+    }
+  }
+  .account{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: $fontSize + 1;
+    .choose{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: -10px;
+      margin-bottom: 15px;
+      li{
+        box-sizing: border-box;
+        font-size: $fontSize ;
+        color: $redDark;
+        line-height: 40px;
+        border: 1px solid #cecece;
+        border-radius: 6px;
+        width: 22%;
+        text-align: center;
+        margin-top: 25px;
+      }
+      .active{
+        background-color: #ffeded;
+        border: 1px solid $redDark;
+      }
+    }
+    .explain{
+      font-size: $fontSize - 2;
+    }
+  }
+  .recharge{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 45px;
+  }
+}
+
+#recordPage{
+  min-height: 100%;
+  background-color: $clF5;
+  font-size: $fontSize - 2;
+  color: $cl0;
+  .head{
+    margin-bottom: 10px;
+    background-color: $clF;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    height: 50px;
+    .income{
+      background-color: $clF5;
+      height: 25px;
+      line-height: 25px;
+      padding: 2px 8px 2px 16px;
+      .arrow{
+        color: $cl9;
+      }
+    }
+    .num{
+      font-size: $fontSize - 2;
+      color: $cl3;
+    }
+  }
+  .content{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: $clF;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $clF5;
+    .chong{
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background-color: $clC;
+      text-align: center;
+      border-radius: 40px;
+      color: $clF;
+      font-size: $fontSize + 8;
+    }
+    .detail{
+      margin-left: 5px;
+      flex-grow: 1;
+      .top{
+        display: flex;
+        justify-content: space-between;
+        .into{
+          font-size: $fontSize + 1;
+          color: $cl3;
+        }
+        .money{
+          font-size: $fontSize + 6;
+          color: $cl3;
+        }
+      }
+      .bottom{
+        display: flex;
+        justify-content: space-between;
+        .date{
+          font-size: $fontSize - 2;
+          color: $cl9;
+        }
+        .order{
+          font-size: $fontSize - 2;
+          color: $redDark;
+        }
+      }
+    }
+  }
+}
+
+#detailPage{
+  height: 100%;
+  background-color: $clF5;
+  font-size: $fontSize - 2;
+  color: $cl0;
+  .head{
+    margin-bottom: 10px;
+    background-color: $clF;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    height: 50px;
+    .income{
+      background-color: $clF5;
+      height: 25px;
+      line-height: 25px;
+      padding: 2px 8px 2px 16px;
+      .arrow{
+        color: $cl9;
+      }
+    }
+    .num{
+      font-size: $fontSize - 2;
+      color: $cl3;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .content{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: $clF;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $clF5;
+    .chong{
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background-color: $clC;
+      text-align: center;
+      border-radius: 40px;
+      color: $clF;
+      font-size: $fontSize + 8;
+    }
+    .detail{
+      margin-left: 5px;
+      flex-grow: 1;
+      .top{
+        display: flex;
+        justify-content: space-between;
+        .into{
+          font-size: $fontSize + 1;
+          color: $cl3;
+        }
+        .money{
+          font-size: $fontSize + 6;
+          color: $cl3;
+        }
+      }
+      .bottom{
+        display: flex;
+        justify-content: space-between;
+        .date{
+          font-size: $fontSize - 2;
+          color: $cl9;
+        }
+        .order{
+          font-size: $fontSize - 2;
+          color: $redDark;
+        }
+      }
+    }
+  }
+}

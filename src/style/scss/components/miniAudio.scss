@@ -1,0 +1,107 @@
+/*
+ * author: nancyzeng
+ * date:2019/5/10
+ */
+
+@charset "UTF-8";
+
+#miniAudio {
+
+  /* 播放中图片旋转动画 */
+  .rotateAction {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    -webkit-animation: rotateAnimate 10s linear infinite;
+    -o-animation: rotateAnimate 10s linear infinite;
+    -moz-animation: rotateAnimate 10s linear infinite;
+    -ms-animation: rotateAnimate 10s linear infinite;
+    animation: rotateAnimate 10s linear infinite;
+  }
+
+  @keyframes rotateAnimate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  & .unaction {
+    display: block;
+  }
+  & .active {
+    & .action {
+      display: none;
+    }
+    // & .unaction {
+    //   display: none;
+    // }
+  }
+
+  & .miniAudio {
+    // opacity: 0;
+    @include bgDecorate(#fff, #000, 50px, 0, none);
+    @include position(fixed, "bl", 65px, 15px, auto, 50px, 50px);
+    @include textOverflow;
+    @include displayFlex(flex, flex-start, center);
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+
+    & .ratioBox {
+      width: 40px;
+      padding-bottom: 40px;
+      border-radius: 40px;
+      margin-left: 5px;
+      margin-top: 5px;
+      overflow: hidden;
+      position: absolute;
+
+      & .box {
+        border-radius: 40px;
+        overflow: hidden;
+      }
+    }
+
+    & .icon {
+      width: 20px;
+      height: 20px;
+      top: 0;
+    }
+
+    & .van-col {
+      border-left: 1px #bfbfbf solid;
+    }
+
+    & .play {
+      position: absolute;
+      left: 50%;
+      margin-left: -7px;
+      top: 50%;
+      margin-top: -8px;
+      z-index: 1;
+    }
+
+    & .van-circle {
+      display: block;
+      position: unset;
+    }
+  }
+
+  & .miniAudio.patch {
+    bottom: 65px;
+  }
+
+  .miniAudio.iphx {
+    bottom: 90px;
+  }
+}

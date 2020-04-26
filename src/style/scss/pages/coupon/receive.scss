@@ -1,0 +1,139 @@
+/*
+ * author: lufei
+ * date:2019/9/24
+ */
+@charset "utf-8";
+
+#receivePage {
+  .receiveContainer{
+    padding: 15px;
+  }
+  .coupon.overdue{
+    // background: url("../../../../assets/null/received.png") no-repeat center;
+    // background-size:cover;
+  }
+  .coupon {
+    position: relative;
+    // padding: 15px;
+    box-sizing: border-box;
+    // height: 200px;
+    border-radius: 3px;
+    color: $clF;
+    text-align: center;
+    // background: url("../../../../assets/null/coupon.png") no-repeat center;
+    background-size:100% auto;
+    .ratiobox {
+      position: relative;
+      .bookImg {
+        display: block;
+        @include ratioBox (100%, 60%, null, contain, $clF, null);
+        border-radius: 3px;
+        // box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+      }
+
+    }
+    .shop{
+      font-size: $fontSize + 6;
+      @include textOverflow;
+      position: absolute;
+      top:10px;
+      width: 100%;
+    }
+    .time{
+      font-size: $fontSize - 2;
+      position: absolute;
+      top:40px;
+      width: 100%;
+    }
+    // .couponPrice{
+    //   position: absolute;
+    //   top:35px;
+    //   width: 100%;
+    // }
+    .price{
+      @include font("PingFangBlod", $fontSize + 28, null);
+    }
+    .condition{
+      display: inline-block;
+      font-size: $fontSize + 1;
+      border:1px solid #FFF;
+      margin-top:5px;
+      padding:2px 5px;
+      position: absolute;
+      bottom:13px;
+      left: 50%;
+      margin-left: -46px;
+    }
+    .received {
+      @include font("PingFangBlod", $fontSize + 56, null);
+      position: absolute;
+      right: -12px;
+      bottom: 40px;
+    }
+  }
+
+  .coupon.receive {
+    background-color: #999;
+  }
+
+  .goodsCoupon {
+    @include displayFlex(flex, space-between, center);
+    // margin: 15px 0;
+    margin-top: 40px;
+    .more{
+      color:$cl9;
+    }
+  }
+
+  & .goodsList {
+    // width: calc(100% + 10px);
+    background-color: $clF;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+
+    .van-col {
+      margin-top: 20px;
+    }
+
+    & .title {
+      @include textOverflow;
+      // height: 38px;
+      @include font("PingFangBold", $fontSize + 1, null);
+      margin-top: 8px;
+      line-height: 1.2;
+      padding:0 5px;
+    }
+
+    .price {
+      color: $redLight;
+      margin-top: 5px;
+      padding: 5px;
+    }
+    .content{
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+      border-radius:3px;
+
+    }
+    .ratiobox {
+      position: relative;
+      border-radius:3px 3px 0 0;
+      .bookImg {
+        display: block;
+        @include ratioBox (100%, 100%, null, contain, null, null);
+        box-sizing: border-box;
+      }
+      .goodsType{
+        display: inline-block;
+        border-radius: 3px;
+        font-size: $fontSize - 2;
+        padding:0 5px;
+        color: #FFF;
+        background-color: rgba(0,0,0,0.4);
+        position: absolute;
+        top:5px;
+        left: 5px;
+      }
+    }
+  }
+}

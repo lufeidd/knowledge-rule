@@ -1,0 +1,112 @@
+/*
+ * author: lufei
+ * date:2019/4/18
+ */
+
+#searchPage{
+
+  .searchHint{
+    @include displayFlex(flex,null,center);
+    position: relative;
+    margin: 0 15px 15px 15px;
+    padding-top: 15px;
+    // padding: 5px;
+    border-radius: 50%;
+    .searchIcon{
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      // margin-top: -7px;
+      color: #999;
+      z-index: 99;
+    }
+    #searchHint{
+      flex-grow: 1;
+      background-color: #f5f5f5;
+      padding: 5px;
+      border-radius: 17px;
+      margin-right: 5px;
+    }
+    .text{
+      font-size: $fontSize + 2;
+      color: $cl6;
+    }
+  }
+  .van-row{
+    flex-wrap: wrap;
+  }
+  .van-search{
+    padding: 8px 15px;
+    input::placeholder{
+      font-size: $fontSize - 1;
+      color: $cl9;
+    }
+    .van-search__action{
+      font-size: $fontSize + 2;
+      color: $cl6;
+    }
+  }
+  .searchRecommend{
+    padding-left: 15px;
+    padding-right: 15px;
+    .recommend{
+      font-size: $fontSize + 1;
+      color: $cl0;
+      margin: 15px 0 0 0;
+    }
+    .van-col{
+      margin-top: 15px;
+      @include textOverflow;
+      text-align: center;
+      .tag{
+        display: inline-block;
+        background-color: $clF5;
+        border-radius: 12px;
+        line-height: 24px;
+        width: 100%;
+        color: $cl6;
+        @include textOverflow;
+        padding: 0 8px;
+        box-sizing: border-box;
+      }
+    }
+    .hotContent{
+      @include textOverflow;
+      text-align: left;
+      color: $cl6;
+      .hotSort{
+        display: inline-block;
+        font-size: $fontSize - 2;
+        width: 17px;
+        line-height: 17px;
+        background-color: #DEDEDE;
+        text-align: center;
+        border-radius: 3px;
+        color: $cl9;
+      }
+      .hotSort.first,.hotSort.second,.hotSort.third{
+        color:$clF;
+      }
+      .hotSort.first{
+        background-color: $redLight;
+      }
+      .hotSort.second{
+        background-color: #FFA22A;
+      }
+      .hotSort.third{
+        background-color: #FFCF2A;
+      }
+    }
+  }
+  .title{
+    @include displayFlex(flex,space-between,center);
+    .history{
+      font-size: $fontSize + 1;
+      color: $cl0;
+    }
+    .clear{
+      color: $cl6;
+      font-size: $fontSize - 1;
+    }
+  }
+}

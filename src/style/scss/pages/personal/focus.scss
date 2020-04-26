@@ -1,0 +1,70 @@
+/*
+ * author: nancyzeng
+ * date:2019/4/16
+ */
+
+@charset "UTF-8";
+
+#focusPage {
+  min-height: 100%;
+  background-color: $clF5;
+
+  & .listBox {
+    padding: 10px 0;
+    background-color: $clF;
+    border-bottom: 1px $clF5 solid;
+
+    & .left {
+      margin-left: 20px;
+
+      & .ratioBox {
+        border-radius: 70px;
+        overflow: hidden;
+        color: #fed2d2;
+        position: relative;
+      }
+    }
+
+    & .right {
+      margin-left: 10px;
+      line-height: 2;
+      flex-grow: 1;
+      @include textOverflow;
+
+      & .title {
+        @include font(null, $fontSize + 2, #000);
+        @include textOverflow;
+      }
+
+      & .subTitle {
+        @include font(null, $fontSize, #666);
+        @include textOverflow;
+      }
+
+      & .new {
+        @include textOverflow;
+        @include font(null, $fontSize - 2, null);
+
+        & .text {
+          @include font(null, null, #999);
+        }
+
+        & .count {
+          @include font(null, null, $redDark);
+        }
+      }
+    }
+
+  }
+
+  // & .msgBox {
+  //   text-align: center;
+  //   background-color: $clF;
+  //   line-height: 1.5;
+  //   padding: 10px 0;
+  //   border-bottom: 1px $clF5 solid;
+  //   margin-top: 5px;
+  //   @include font("PingFangMedium", $fontSize - 2, #999);
+  //   @include textOverflow;
+  // }
+}

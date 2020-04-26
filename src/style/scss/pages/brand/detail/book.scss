@@ -1,0 +1,528 @@
+/*
+ * author: lufei
+ * date:2019/4/19
+ */
+
+#bookPage {
+  background-color: $clF5;
+  padding-bottom: 15px;
+
+  .verticleLine {
+    display: inline-block;
+    width: 3px;
+    height: 11px;
+    border-radius: 1.5px;
+    background-color: $redDark;
+    margin-right: 4px;
+  }
+
+  .lh {
+    line-height: 1;
+    @include font("PingFangBlod", $fontSize + 2, $cl3);
+  }
+
+  .all {
+    font-size: $fontSize - 2;
+    color: $cl9;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-top: 1px solid $clF5;
+  }
+
+  .text {
+    padding: 0 15px;
+    @include displayFlex(flex, flex-start, flex-end);
+  }
+
+  .van-tag--large {
+    font-size: $fontSize - 2;
+  }
+
+  .bookInfo {
+    background-color: $clF;
+    padding: 15px 0 15px 15px;
+
+    .info {
+      @include displayFlex(flex, flex-start, null);
+      position: relative;
+
+      .ratiobox {
+        min-width: 64px;
+
+        .bookImg {
+          display: block;
+          @include ratioBox (null, 136.6%, null, contain, $clF, null);
+        }
+      }
+
+      .bookContent {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-between;
+        margin-left: 5px;
+
+        .author {
+          font-size: $fontSize - 2;
+          color: $cl9;
+        }
+        .title{
+          display: inline-block;
+          width: 55%;
+          @include textOverflow;
+        }
+        .message {
+          font-size: $fontSize - 2;
+          color: $cl9;
+
+          .title {
+            @include font("PingFangBlod", $fontSize + 2, $cl3);
+          }
+
+          .collect {
+            color: $redDark;
+          }
+
+          .xinxi {
+            margin-left: 30px;
+            display: inline-block;
+            color: $cl9;
+          }
+        }
+      }
+    }
+
+    .swiperTags {
+      margin-top: 10px;
+
+      .swiper-slide {
+        width: auto;
+      }
+    }
+  }
+
+  .publish {
+    background-color: $clF;
+    padding:0 15px;
+    margin-top: 5px;
+    @include displayFlex(flex, space-between, center);
+
+    .from {
+      @include displayFlex(flex, flex-start, center);
+
+      .icon {
+        width: 35px;
+        height: 35px;
+        border: 1px solid $clC;
+        border-radius: 35px;
+        align-items: center;
+      }
+
+      .publishInfo {
+        margin-left: 7px;
+
+        .publishName {
+          @include font("PingFangBlod", null, $cl6);
+        }
+
+        .foucsNumber {
+          font-size: $fontSize - 2;
+          color: $cl9;
+        }
+      }
+    }
+
+    .foucs {
+      @include font("PingFangBlod", $fontSize - 2, $clF);
+      background-color: $clC8;
+      display: inline-block;
+      line-height: 20px;
+      border-radius: 10px;
+      padding: 0 10px;
+    }
+
+    .add {
+      background-color: $redDark;
+    }
+  }
+
+  .introduction {
+    background-color: $clF;
+    padding-top: 15px;
+    margin-top: 5px;
+
+    .detail {
+      font-size: $fontSize - 1;
+      padding: 10px 15px;
+    }
+  }
+
+  .list {
+    background-color: $clF;
+    margin-top: 5px;
+    padding-top: 15px;
+
+    .listNumber {
+      font-size: $fontSize - 2;
+      color: $cl9;
+      margin-left: 5px;
+    }
+
+    ul {
+      padding: 10px 15px;
+
+      li {
+        font-size: $fontSize - 1;
+        color: $cl6;
+
+        .name {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  .bookAuthor {
+    background-color: $clF;
+    margin-top: 5px;
+    padding-top: 15px;
+
+    .authorInfo {
+      padding: 10px 15px 35px 15px;
+      @include displayFlex(flex, flex-start, null);
+
+      .ratiobox {
+        min-width: 56px;
+
+        .bookImg {
+          display: block;
+          @include ratioBox (null, 130.8%, null, contain, $clF, null);
+        }
+      }
+
+      .content {
+        margin-left: 5px;
+
+        .authorName {
+          font-size: $fontSize + 1;
+          color: $cl6;
+        }
+
+        .works {
+          font-size: $fontSize - 2;
+          color: $cl9;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $redDark;
+    }
+
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 3px;
+      border-radius: 1.5px;
+    }
+  }
+
+  .recommend {
+    background-color: $clF;
+    margin-top: 5px;
+    padding-top: 15px;
+
+    .recommendInfo {
+      padding: 15px 0 15px 15px;
+
+      .ratiobox {
+        min-width: 77px;
+
+        .bookImg {
+          display: block;
+          @include ratioBox (null, 133.3%, null, contain, $clF, null);
+        }
+      }
+
+      .recommendName {
+        @include font("PingFangBlod", $fontSize - 1, $cl6);
+        margin-top: 5px;
+        @include textOverflow;
+      }
+
+      .nickname {
+        font-size: $fontSize - 2;
+        color: $cl9;
+        @include textOverflow;
+      }
+    }
+  }
+
+  .showContent {
+    background-color: $clF;
+    margin-top: 5px;
+    padding: 15px 0 15px 15px;
+    margin-bottom: 5px;
+
+    .foot {
+      @include displayFlex(flex, flex-start, null);
+
+      .ratiobox {
+        min-width: 106px;
+
+        .bookImg {
+          display: block;
+          @include ratioBox (null, 58.87%, null, contain, $clF, null);
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-between;
+        padding:0 10px;
+
+        .title {
+          line-height: 1.2;
+          @include font("PingFangBlod", $fontSize, $cl3);
+        }
+
+        .name {
+          font-size: $fontSize - 2;
+          color: $cl6;
+        }
+      }
+    }
+  }
+
+  .van-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .van-popup--bottom {
+    height: 80%;
+  }
+
+  .van-popup {
+    overflow: hidden;
+
+    .headTitle {
+      position: relative;
+      height: 43px;
+      line-height: 43px;
+      text-align: center;
+      font-size: $fontSize + 3;
+      color: $cl6;
+      border-bottom: 1px solid $clF5;
+      position: fixed;
+      top: 0;
+      width: 100%;
+
+      .icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        margin-top: -8.5px;
+      }
+    }
+
+    .content {
+      // margin-top: 43px;
+      padding: 15px;
+      font-size: $fontSize - 1;
+      color: $cl6;
+      position: absolute;
+      top: 43px;
+      bottom: 0;
+      overflow-y: auto;
+      width: 92%;
+
+      .press {
+        color: $cl3;
+      }
+
+      ul {
+        li {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  // 评论
+  & .commentBox {
+    background-color: $clF;
+    margin-top: 5px;
+    margin-bottom: 50px;
+
+    & .listBox {
+      @include displayFlex (flex, null, flex-start);
+      padding: 15px;
+      background-color: $clF;
+      border-bottom: 1px solid $clF5;
+
+      & .left {
+        @include flexBasis (35px);
+        margin-right: 10px;
+        margin-top: 5px;
+
+        & .ratioBox {
+          border-radius: 35px;
+        }
+      }
+
+      & .center {
+        display: block;
+
+        & .title {
+          @include font("PingFangBold", $fontSize - 1, #666);
+          @include textOverflow;
+          display: block;
+
+          & .text {
+            @include textOverflow;
+            display: block;
+            padding-right: 0;
+          }
+        }
+
+        & .subTitle {
+          @include font("PingFangBold", $fontSize, #333);
+          margin-top: 5px;
+          white-space: pre-wrap;
+          overflow: visible;
+          -webkit-line-clamp: 1000;
+        }
+
+        & .messageBox {
+          background-color: #f7f7f7;
+          padding: 5px;
+          margin-top: 5px;
+          font-size: $fontSize - 1;
+
+          & .message {
+            display: none;
+            margin-top: 2px;
+
+            & .name {
+              color: $orangeLight;
+            }
+
+            & .dialog {
+              color: #666;
+            }
+          }
+
+          & .message.active {
+            display: block;
+          }
+        }
+
+        // 回复
+        & .answerBox {
+          margin-top: 15px;
+
+          & .date {
+            @include font(null, $fontSize - 1, #999);
+            margin-right: 15px;
+          }
+
+          & .action {
+            @include font(null, $fontSize - 1, #333);
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+  }
+
+  & .audioList {
+    position: relative;
+    height: 94vh;
+    overflow: hidden;
+
+    & .title {
+      height: 44px;
+      line-height: 44px;
+      border-bottom: 1px #eee solid;
+      text-align: center;
+      position: relative;
+      @include displayFlex(flex, center, center);
+      @include font(null, $fontSize + 2, #999);
+
+      & .action {
+        @include position(absolute, "tl", 0, 0, 44px, 44px, null);
+
+        & .icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      & .punish {
+        @include position(absolute, "tr", 0, 0, 60px, 44px, null);
+        color: $redDark;
+      }
+    }
+
+    & .content {
+      padding: 10px;
+
+      & textarea {
+        width: 100%;
+        border: 1px #ccc solid;
+        border-radius: 5px;
+        padding: 5px;
+        box-sizing: border-box;
+        min-height: 100px;
+      }
+
+      & .count {
+        font-size: $fontSize - 2;
+        color: #999;
+        text-align: right;
+
+        & .active {
+          color: $redDark;
+        }
+      }
+
+
+    }
+  }
+
+  .pinglun {
+    line-height: 50px;
+    background-color: $clF;
+    color: $clC;
+    font-size: $fontSize + 4;
+    @include displayFlex(flex, space-between, null);
+    @include position(fixed, "br", 0, null, 100%, null, null);
+    z-index: 999;
+    .write {
+      height: 30px;
+      margin-left: 15px;
+      line-height: 30px;
+      flex-grow: 1;
+      margin-right: 20px;
+      border: 1px solid $clC;
+      border-radius: 5px;
+      padding-left: 5px;
+      margin-top: 10px;
+      font-size: $fontSize;
+      color: $cl9;
+    }
+
+    .nice {
+      margin-right: 15px;
+
+      .add {
+        color: $redDark;
+      }
+    }
+  }
+}

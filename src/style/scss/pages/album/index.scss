@@ -1,0 +1,778 @@
+/*
+ * author: nancyzeng
+ * date:2019/4/19
+ */
+
+@charset "UTF-8";
+
+#albumPage {
+  background-color: $clF5;
+  min-height: 100%;
+
+  & .audioList {
+    position: relative;
+    height: 94vh;
+    overflow: hidden;
+
+    & .title {
+      height: 44px;
+      line-height: 44px;
+      border-bottom: 1px #eee solid;
+      text-align: center;
+      position: relative;
+      @include displayFlex(flex, center, center);
+      @include font(null, $fontSize + 2, #999);
+
+      & .action {
+        @include position(absolute, "tl", 0, 0, 44px, 44px, null);
+
+        & .icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      & .punish {
+        @include position(absolute, "tr", 0, 0, 60px, 44px, null);
+        color: $redDark;
+      }
+    }
+
+    & .content {
+      padding: 10px;
+
+      & textarea {
+        width: 100%;
+        border: 1px #ccc solid;
+        border-radius: 5px;
+        padding: 5px;
+        box-sizing: border-box;
+        min-height: 100px;
+      }
+
+      & .count {
+        font-size: $fontSize - 2;
+        color: #999;
+        text-align: right;
+
+        & .active {
+          color: $redDark;
+        }
+      }
+
+    }
+  }
+
+  // 详情
+  & .publish {
+    background-color: $clF;
+    padding: 0 15px;
+    margin-top: 5px;
+    @include displayFlex(flex, space-between, center);
+
+    .from {
+      @include displayFlex(flex, flex-start, center);
+
+
+      .icon {
+        width: 35px;
+        height: 35px;
+        border: 1px solid $clC;
+        border-radius: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      .publishInfo {
+        margin-left: 7px;
+
+        .publishName {
+          @include font("PingFangBold", $fontSize, $cl6);
+        }
+
+        .focusNumber {
+          font-size: $fontSize - 2;
+          color: $cl9;
+        }
+      }
+    }
+
+    .focus {
+      font-size: $fontSize - 2;
+      color: #cbcbcb;
+      display: inline-block;
+      line-height: 20px;
+      border-radius: 10px;
+      padding: 0 10px;
+      border: 1px solid #cbcbcb;
+    }
+
+    .add {
+      color: $redDark;
+      border: 1px solid $redDark;
+    }
+  }
+
+  // 评论
+  & .commentBox {
+    background-color: $clF;
+    margin-top: 5px;
+
+    & .listBox {
+      background-color: $clF;
+
+      & .left {
+        @include flexBasis (35px);
+        margin-right: 10px;
+        margin-top: 5px;
+
+        & .ratioBox {
+          border-radius: 35px;
+        }
+      }
+
+      & .center {
+        display: block;
+
+        & .title {
+          @include font("PingFangBold", $fontSize - 1, #666);
+          @include textOverflow;
+          display: block;
+
+          & .text {
+            @include textOverflow;
+            display: block;
+            padding-right: 0;
+          }
+        }
+
+        & .subTitle {
+          @include font("PingFangBold", $fontSize, #333);
+          margin-top: 5px;
+          white-space: pre-wrap;
+          overflow: visible;
+          -webkit-line-clamp: 1000;
+        }
+
+        & .messageBox {
+          background-color: #f7f7f7;
+          padding: 5px;
+          margin-top: 5px;
+          font-size: $fontSize - 1;
+
+          & .message {
+            display: none;
+            margin-top: 2px;
+
+            & .name {
+              color: $orangeLight;
+            }
+
+            & .dialog {
+              color: #666;
+            }
+          }
+
+          & .message.active {
+            display: block;
+          }
+        }
+
+        // 回复
+        & .answerBox {
+          margin-top: 15px;
+
+          & .date {
+            @include font(null, $fontSize - 1, #999);
+            margin-right: 15px;
+          }
+
+          & .action {
+            @include font(null, $fontSize - 1, #333);
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+  }
+
+  & .listBox {
+    @include displayFlex (flex, flex-start, flex-start);
+    background-color: $orangeLight;
+    padding: 15px 15px 10px 15px;
+    border-bottom: 1px #f5f5f5 solid;
+
+    & .left {
+      margin-right: 10px;
+      margin-top: 5px;
+
+      & .ratioBox {
+        border-radius: 2px;
+      }
+    }
+
+    & .center {
+      @include twoLines;
+
+      & .title {
+        @include font("PingFangBold", $fontSize + 2, $clF);
+        @include twoLines;
+        position: relative;
+
+        & .text {
+          @include twoLines;
+          padding-right: 80px;
+        }
+
+        & .action {
+          @include position (absolute, 'tr', 0, 0, null, 20px, 20px);
+
+          & .icon {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+
+      & .subTitle {
+        @include twoLines;
+        @include font(null, $fontSize - 1, $clF);
+        margin-top: 20px;
+        height: 20px;
+      }
+
+      & .info {
+        margin-top: 10px;
+        @include textOverflow;
+        @include clearfix;
+
+        & div {
+          line-height: 20px;
+          margin-right: 5px;
+          @include textOverflow;
+          @include floatBlock (left, null, left);
+          @include font(null, $fontSize - 2, $clF);
+        }
+
+        & .name {
+          float: left;
+          margin-right: 5px;
+          max-width: 130px;
+          position: relative;
+          box-sizing: border-box;
+          @include bgDecorate(transparent, $clF, 20px, 0, null);
+
+
+          & img {
+            position: absolute;
+            left: 1px;
+            top: 3px;
+            border-radius: 15px;
+
+          }
+
+          & .van-tag {
+            padding-left: 21px;
+          }
+        }
+
+        & .count {
+          float: left;
+          @include bgDecorate(transparent, $clF, 20px, 0, null);
+        }
+      }
+    }
+
+  }
+
+  // 节目
+  & .listContent {
+    background-color: $clF;
+    padding: 0 15px;
+
+    & .title {
+      padding: 15px 0;
+      font-size: $fontSize - 1;
+      position: relative;
+
+      & .play {
+        margin-right: 12px;
+
+        & .tag {
+          position: absolute;
+          top: 45px;
+          left: 0;
+          right: 0;
+          border-radius: 4px;
+          display: block;
+          background-color: rgba($color: #feeaea, $alpha: 0.9);
+          z-index: 1;
+          font-size: $fontSize - 1;
+          color: $redDark;
+          padding: 10px;
+
+          & .text {
+            padding-right: 40px;
+            display: block;
+            @include textOverflow;
+          }
+
+          & .icon {
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            right: 0;
+            top: 2px;
+            padding: 10px;
+            color: #ffb3b2;
+          }
+        }
+
+        & .tag::before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-right: 12px solid transparent;
+          border-left: 12px solid transparent;
+          border-top: none;
+          border-bottom: 6px solid rgba($color: #feeaea, $alpha: 0.9);
+          top: -4px;
+        }
+
+        & .van-icon {
+          width: 13px;
+          height: 13px;
+          margin-right: 2px;
+          position: relative;
+          top: 2px;
+        }
+
+      }
+
+      & .total {
+        font-size: $fontSize - 1;
+        color: #999;
+      }
+
+      & .icon {
+        width: 20px;
+        height: 20px;
+        color: #999;
+      }
+    }
+
+    & .content {
+
+      // 节目
+      & .list {
+        @include displayFlex (flex, center, center);
+        padding: 8px 0;
+        border-bottom: 1px $clF5 solid;
+        position: relative;
+
+        & .rank {
+          font-size: $fontSize + 1;
+          color: #666;
+        }
+
+        & .desc {
+          @include twoLines;
+          @include font(null, $fontSize - 1, #000);
+
+          & .tag {
+            color: $redDark;
+            margin-right: 10px;
+            font-size: $fontSize - 2;
+          }
+        }
+
+        & .info {
+          margin-top: 8px;
+
+          & .van-tag {
+            padding: 0 4px;
+            margin-right: 10px;
+          }
+
+          & .count,
+          & .time {
+            font-size: $fontSize - 1;
+            color: #999;
+            margin-right: 10px;
+          }
+
+          & .history {
+            color: $redDark;
+            font-size: $fontSize - 2;
+          }
+        }
+
+        & .date {
+          color: #999;
+          font-size: $fontSize - 1;
+        }
+
+        & .status {
+          @include position (absolute, 'br', 5px, 0, null, null, null);
+
+          & .icon {
+            width: 25px;
+            height: 25px;
+            color: $redDark;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // 相似
+  & .simularContent {
+    & .listBox {
+      @include displayFlex (flex, flex-start, flex-start);
+      background-color: $clF;
+
+      & .center {
+        @include textOverflow;
+        display: block;
+
+        & .title {
+          @include font("PingFangBold", $fontSize + 2, #333);
+          @include textOverflow;
+          display: block;
+          height: 30px;
+          line-height: 30px;
+
+          & .text {
+            @include textOverflow;
+            display: block;
+          }
+        }
+
+        & .subTitle {
+          @include textOverflow;
+          @include font(null, $fontSize - 1, #666);
+          margin-top: 0;
+          display: block;
+        }
+
+        & .info {
+          margin-top: 3px;
+
+          & .van-tag {
+            padding: 0 4px;
+            margin-right: 10px;
+          }
+
+          & .count,
+          & .time {
+            font-size: $fontSize - 1;
+            color: #999;
+            margin-right: 10px;
+          }
+
+          & .history {
+            color: $redDark;
+            font-size: $fontSize - 2;
+          }
+        }
+
+      }
+
+    }
+
+  }
+  // 优惠券
+  & .toMall {
+    display: inline-block;
+    // width: 65px;
+    // height: 24px;
+    border: 1px solid $redLight;
+    line-height: normal;
+    padding: 2px 5px;
+    text-align: center;
+    @include font(null, $fontSize - 2, $redLight);
+    border-radius: 12px;
+    margin-right: 5px;
+  }
+
+  & .toMall.btn {
+    position: absolute;
+    top: 45px;
+    right: 5px;
+  }
+
+  & .toMall.red {
+    background-color: $redLight;
+    color: $clF;
+  }
+
+  & .van-popup {
+    .header {
+      // background-color: #f5f5f5;
+      padding: 0 15px;
+      height: 40px;
+      @include displayFlex(flex, space-between, center);
+
+      .catalogWord {
+        font-size: $fontSize + 1;
+      }
+    }
+
+    .content {
+      // padding: 15px;
+      position: absolute;
+      top: 40px;
+      bottom: 0;
+      overflow-y: auto;
+      width: 100%;
+      box-sizing: border-box;
+      // background-color: #f5f5f5;
+      padding: 10px 15px;
+
+      .toUse.overdue {
+        .left {
+          background-color: $cl9;
+        }
+
+        .mid {
+          color: $cl9;
+        }
+
+        .right {
+
+          .shopCoupon,
+          .used {
+            color: $cl9;
+          }
+        }
+      }
+
+      // .toUse.overdue{
+      //   background-color: #A6A6A6;
+      // }
+      .toUse {
+        box-sizing: border-box;
+        background-color: $clF;
+        @include displayFlex(flex, null, null);
+        align-items: stretch;
+
+        .left {
+          width: 8px;
+          background-color: $redLight;
+          border-radius: 6px 0 0 6px;
+        }
+
+        .mid {
+          text-align: center;
+          width: 30%;
+          padding: 10px 5px;
+          border-right: 1px dashed #bfbfbf;
+          box-sizing: border-box;
+          color: $redLight;
+          position: relative;
+
+          .price {
+            // font-size: $fontSize + 21;
+            @include font("PingFangBlod", $fontSize + 10, null);
+          }
+
+          .condition {
+            white-space: nowrap;
+            margin-top: 28px;
+          }
+
+          .circle {
+            width: 10px;
+            height: 10px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            position: absolute;
+            right: -5px;
+          }
+
+          .circle.top {
+            top: -5px;
+          }
+
+          .circle.bottom {
+            bottom: -5px;
+          }
+        }
+
+        .right {
+          // width: 70%;
+          flex-grow: 1;
+          padding: 10px;
+          position: relative;
+          .shop {
+            margin-left: 70px;
+            font-size: $fontSize + 2;
+          }
+
+          .time {
+            margin-top: 5px;
+            font-size: $fontSize - 2;
+            color: $cl9;
+          }
+
+          .desc {
+            margin-top: 40px;
+          }
+
+          .used {
+            @include font("PingFangBlod", $fontSize + 46, $redLight);
+            position: absolute;
+            right: -15px;
+            bottom: -15px;
+          }
+          .shopCoupon{
+            position: absolute;
+            left: 5px;
+            top: -10px;
+            color:$redLight;
+            display: inline-block;
+            .icon{
+              font-size: 70px;
+            }
+            .dianpu{
+              display: inline-block;
+              width: 36px;
+              color:$clF;
+              position: absolute;
+              top:50%;
+              left: 50%;
+              margin-top: -12px;
+              margin-left: -20px;
+              font-size: 12px;
+              @include textOverflow;
+            }
+          }
+        }
+      }
+    }
+  }
+  .coupon{
+    max-width: 640px;
+    @include position (fixed, 'bl', 50px, auto, 100%, 44px, 0);
+  }
+  .coupon.bottom{
+    max-width: 640px;
+    @include position (fixed, 'bl', 0px, auto, 100%, 44px, 0);
+  }
+  // 拼团
+  .group{
+    padding:15px;
+    .top{
+      @include displayFlex(flex, space-between, null);
+      & .ratiobox {
+        min-width: 100px;
+        margin-right: 10px;
+        .bookImg {
+          @include ratioBox (100%, 100%, 1px solid $clF5, contain, $clF, null);
+          border-radius: 3px;
+        }
+      }
+      .right{
+        flex-grow:1;
+        flex-direction:column;
+        display:flex;
+        width:50%;
+        justify-content: space-between;
+        align-content: space-between;
+        padding:5px 0;
+        .title{
+          @include twoColtextOverflow;
+          font-size:$fontSize + 1;
+        }
+        .desc{color:$redLight;}
+        .sign{
+          display:inline-block;
+          background-color:#FFECEC;
+          border-radius:5px;
+          font-size:$fontSize - 4;
+          color:$redLight;
+          padding:0 3px;
+          width:120px;
+        }
+      }
+    }
+    .list{
+      position: absolute;
+      top:110px;
+      bottom:85px;
+      // overflow-y: auto;
+      width: calc(100% - 30px);
+      .content{
+        @include displayFlex(flex, space-between, center);
+        padding:0;
+        padding-bottom:15px;
+        position: relative;
+        .left{
+          // width:70px;
+          img{
+            border-radius: 50%;
+            border:1px solid $clF;
+            position: absolute;
+            top:4px;
+          }
+          .over,.add{
+            display:inline-block;
+            width: 30px;
+            height:30px;
+            line-height: 30px;
+            border-radius: 50%;
+            border:1px solid $clF;
+            text-align: center;
+            color:$clF;
+            background-color: #BFBFBF;
+            position: absolute;
+            top:4px;
+          }
+          .add{
+            background-color: #DCDCDC;
+          }
+        }
+        .mid{
+          margin-left: 55px;
+          .time{
+            color:$cl9;
+            font-size: $fontSize - 2;
+          }
+        }
+        .right{
+          .van-button{
+            border-radius: 15px;
+            min-width: 75px;
+          }
+        }
+      }
+    }
+    .groupbottom{
+      position: absolute;
+      bottom:15px;
+      width: calc(100% - 30px);
+      .text{
+        color:$cl9;
+        font-size: $fontSize - 3;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .van-button{
+        width: 100%;
+        height:40px;
+        border-radius: 20px;
+        font-size: $fontSize + 2;
+      }
+    }
+  }
+}

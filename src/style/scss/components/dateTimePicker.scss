@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.van-picker__cancel {
+  font-size: 15px;
+  color: #999;
+}
+
+.van-picker__confirm {
+  font-size: 15px;
+  color: #f05654;
+}
+
+.van-picker__title {
+  color: #333;
+  font-size: 15px;
+}
+
+.van-overlay {
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.van-picker__columns {
+  &:not(:first-child) {
+    flex: none;
+  }
+
+  &:not(:last-child) {}
+
+  .van-picker-column {
+    flex: none;
+  }
+}
+
+.van-picker-column__item {
+  font-size: 13px;
+  color: #666;
+}
+.van-picker-column__item.van-picker-column__item--selected {
+  color: #f05654;
+}
+
+.van-picker__frame {
+  display: none;
+}
+

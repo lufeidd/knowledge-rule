@@ -1,0 +1,131 @@
+/*
+ * author: lufei
+ * date:2019/4/17
+ */
+
+ #listPage{
+  background-color: $clF5;
+  min-height: 100%;
+  box-sizing: border-box;
+   .content{
+     background-color: $clF;
+     padding-left: 15px;
+     padding-right: 15px;
+     margin-top: 10px;
+     &:nth-child(1){
+       margin-top: 0;
+     }
+     .head{
+       height: 40px;
+       line-height: 40px;
+       border-bottom: 1px solid $clF5;
+       @include displayFlex(flex,space-between,center);
+       .titleFrom{
+        @include displayFlex(flex,flex-start,center);
+        //  .icon{
+        //   width: 21px;
+        //   height: 21px;
+        //   border: 1px solid $clC;
+        //   border-radius: 21px;
+        //   align-items: center;
+        //   margin-right: 5px;
+        // }
+        .publish{
+          font-size: $fontSize + 1;
+          color: $cl3;
+        }
+        .ratiobox{
+          min-width: 21px;
+          margin-right: 5px;
+         .bookImg{
+           display: block;
+           border-radius:50%;
+          @include ratioBox ( null, 100%, 1px solid $clF5,contain, $clF, null);
+         }
+        }
+       }
+       .order1{
+         font-size: $fontSize - 1;
+         color: $redDark;
+       }
+       .order2{
+        font-size: $fontSize - 1;
+        color: $cl0;
+       }
+     }
+     .section{
+      padding-top: 13px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid $clF5;
+      .swiper-slide{
+        margin-right: 10px;
+        box-sizing: border-box;
+      }
+      .ratiobox{
+        min-width: 60px;
+       .bookImg{
+         display: block;
+        @include ratioBox ( null, 100%, 1px solid $clF5,contain, $clF, null);
+       }
+      }
+       .bookDetail{
+         @include displayFlex(flex,flex-start,flex-start);
+
+         .title{
+           margin-left: 10px;
+           @include twoColtextOverflow;
+           @include font("PingFangBlod", $fontSize + 2, $cl3);
+         }
+       }
+       .tip1{
+         text-align: right;
+         margin-top: 10px;
+       }
+       .actulPay{
+        font-size: $fontSize;
+        color: $cl0;
+        .money{
+          @include font("PingFangBlod", $fontSize, $cl0);
+        }
+      }
+     }
+     .tip2{
+      padding-top: 10px;
+      padding-bottom: 10px;
+     @include displayFlex(flex,space-between,center);
+     .noChange{
+       font-size: $fontSize - 2;
+       color: $cl9;
+     }
+    }
+     .button{
+      display: inline-block;
+      width: 60px;
+      height: 24px;
+      border-radius: 12px;
+      text-align: center;
+      line-height: 24px;
+      font-size: $fontSize - 2;
+      margin-left: 0;
+     }
+     .button1{
+      border: 1px solid $clC8;
+      color: $cl3;
+     }
+     .button2{
+      border: 1px solid $redDark;
+      color: $redDark;
+     }
+     .footFinish{
+      height: 44px;
+      @include displayFlex(flex,space-between,center);
+      .more{
+        font-size: $fontSize - 2;
+      }
+     }
+     .foot{
+       height: 44px;
+      @include displayFlex(flex,space-between,center);
+     }
+   }
+ }

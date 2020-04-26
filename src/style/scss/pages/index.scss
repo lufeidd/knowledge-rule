@@ -1,0 +1,160 @@
+/*
+ * author: lufei
+ * date:2019/8/1
+ */
+
+ #indexPage{
+
+  .searhResult{
+    position: relative;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 15px;
+    input{
+      width: 100%;
+      height: 33px;
+      box-sizing: border-box;
+      border: none;
+      background-color: $clF5;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .icon.searchIcon{
+      position: absolute;
+      left: 20px;
+      color: $cl9;
+      top: 50%;
+      margin-top: -7px;
+      left: 30%;
+    }
+  }
+  .sliderImage{
+    margin-bottom: 15px;
+    .slide{
+      position: relative;
+      .title{
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        font-size: $fontSize + 2;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding:0 15px;
+        background-color: rgba(0,0,0,0.2);
+      }
+    }
+    .ratiobox {
+      min-width: 100%;
+      .bookImg {
+        display: block;
+        @include ratioBox (100%, 50%, null, contain, $clF, null);
+        border-radius: 3px;
+        box-shadow: 0 0 4px rgba(0,0,0,0.1);
+      }
+    }
+
+    .swiper-pagination-bullet{
+      background: #dcdcdc;
+    }
+    .swiper-pagination-bullet-active{
+      background: $clF5;
+    }
+    .swiper-container{
+      padding-bottom: 20px;
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets{
+      bottom:-5px;
+    }
+  }
+  .list{
+
+    .content{
+      @include displayFlex(flex, null, null);
+      padding: 15px;
+      border-bottom: 1px solid $clF5;
+      .ratiobox {
+        min-width: 129px;
+        position: relative;
+        .bookImg {
+          display: block;
+          @include ratioBox (100%, 61.8%, 1px solid $clF5, contain, $clF, null);
+          border-radius: 3px;
+          box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+        .radio{
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          border-radius: 12px;
+          text-align: center;
+          line-height: 24px;
+          background-color: rgba(0,0,0,0.3);
+          position: absolute;
+          right: 8px;
+          bottom: 8px;
+          .icon{
+            color: #fff;
+          }
+        }
+
+      }
+      .right{
+        flex-grow: 1;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-between;
+        width: 50%;
+        .text{
+          @include font("PingFangBold", $fontSize + 2, $cl3);
+          @include twoColtextOverflow;
+        }
+        .pinpai{
+          font-size: $fontSize - 1;
+          color: $cl6;
+          margin-top: 10px;
+          @include twoColtextOverflow;
+        }
+        .nice{
+          @include displayFlex(flex, space-between, flex-end);
+          color: $cl9;
+          font-size: $fontSize - 2;
+          .time{
+
+          }
+          .price{
+            color: $redLight;
+            font-size: $fontSize + 2;
+          }
+        }
+      }
+    }
+    .content.book{
+      .ratiobook {
+        min-width: 129px;
+        position: relative;
+        .bookImg {
+          display: block;
+          @include ratioBox (100%, 100%, 1px solid $clF5, contain, $clF, null);
+          border-radius: 3px;
+          box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+      }
+    }
+    .content.ebook{
+      .ratiobook {
+        min-width: 129px;
+        position: relative;
+        .bookImg {
+          display: block;
+          @include ratioBox (100%, 133.33%, 1px solid $clF5, contain, $clF, null);
+          border-radius: 3px;
+          box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+      }
+    }
+  }
+
+ }

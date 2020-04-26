@@ -1,0 +1,33 @@
+/*
+ * author: nancyzeng
+ * date:2019/4/17
+ */
+
+@charset "UTF-8";
+
+// 头像裁切
+.cropperBox {
+  @include position (fixed, 'tl', 0, 0, 100%, 100%, 0);
+
+  // 按钮
+  & .buttonBox {
+    @include position (fixed, 'bl', 0, 0, 100%, 48px, 0);
+    @include font(null, $fontSize + 2, $clF);
+    @include displayFlex (flex, center, center);
+    background-color: #333;
+
+    & .button {
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+
+  & .vue-cropper {
+    background-image: none;
+    background-color: #333;
+  }
+}
+
+.cropper-modal {
+  background: rgba(0, 0, 0, 0.43)
+}

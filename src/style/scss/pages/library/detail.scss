@@ -1,0 +1,211 @@
+/*
+ * author: zhuboyu
+ * date:2019/10/28
+ */
+
+@charset "utf-8";
+
+#libraryDetail{
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: rgb(240, 240, 240);
+  .titleOver{
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .package{
+    padding: 15px;
+    background-color: #fff;
+    position: relative;
+    .title{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 10px 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background-color: #fff;
+      .text{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        .line{
+          display: inline-block;
+          width: 3px;
+          height: 11px;
+          border-radius: 1.5px;
+          background-color: #f05654;
+          margin-right: 4px;
+        }
+        .lh{
+          line-height: 1;
+          font-family: PingFangBlod;
+          font-size: 16px;
+          color: #333;
+          font-weight: bold;
+        }
+      }
+    }
+    .content{
+      margin-bottom: 20px;
+      color: #666666;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+    .radioButton{
+      background-color: #F05654;
+      border-radius:6px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span{
+        color: #ffffff;
+        font-size: 16px;
+        font-family:PingFang SC;
+        padding-left: 5px;
+      }
+    }
+  }
+  .content-box{
+    margin-top: 5px;
+    background-color: #ffffff;
+    .textB{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 15px 20px;
+      .box:nth-child(3n){margin-right: 0;}
+      .box{
+        background: rgba(255,255,255,1);
+        border-radius: 5px;
+        margin-right: 8px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        .bookImg{
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 0;
+          position: relative;
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding-bottom: 100%;
+          background-color: #fff;
+          border-radius: 5px;
+        }
+      }
+    }
+    .textFile{
+      .file{
+        border-bottom: 1px solid #eee;
+        padding-left: 15px;
+      }
+      .content{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #f0f0f0;
+        .fileText{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-grow: 1;
+          .text{
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            padding: 0 14px 0 6px;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+  }
+  .bottom{
+    margin-top: 5px;
+    background-color: #fff;
+  }
+
+
+
+
+
+  //email弹窗事件
+  .emailPopup{
+    /*width: 86.67%;
+    height: 30%;*/
+    width: 82.67%;
+    height: 200px;
+    border-radius: 5px;
+    padding: 25px 16px 0;
+    overflow: hidden;
+    top: 150px;
+    position: absolute;
+    .text{
+      span{
+        color: #999999;
+      }
+    }
+    .close{
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 13px;
+      color: #999;
+    }
+    .van-cell{
+      border-bottom: 1px solid #e6e6e6;
+      padding: 10px 0;
+    }
+    .send{
+      background: #efefef;
+      color: #999999;
+    }
+    .filePackageUrl{
+      display: flex;
+      align-items: center;
+      line-height: 40px;
+      .urlLink{
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #666666;
+      }
+      .copyBtn{
+        flex-shrink: 0;
+        background: #F45856;
+        color: #ffffff;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+/*
+ * author: nancyzeng
+ * date:2019/4/17
+ */
+
+@charset "UTF-8";
+
+#app {
+  height: 100%;
+}
+
+#listPage {
+  background-color: #f5f5f5;
+  min-height: 100%;
+
+  & .addressBox {
+
+    & li {
+      background-color: $clF;
+      margin-bottom: 5px;
+
+      & .info {
+        @include bgDecorate(null, null, 0, 8px 0, null);
+        margin: 0 15px;
+        border-bottom: 1px #eee solid;
+
+        & .name {
+          @include font("PingFangBold", $fontSize + 2, #333);
+          margin-right: 10px;
+        }
+
+        & .phone {
+          @include font(null, $fontSize, #666);
+        }
+
+        & .address {
+          margin-top: 5px;
+          @include font(null, $fontSize + 1, #666);
+        }
+
+      }
+
+      & .action {
+        @include font(null, $fontSize - 1, #666);
+        @include displayFlex (flex, flex-start, center);
+        padding: 10px 15px;
+
+        & a {
+          @include font(null, $fontSize - 1, #666);
+        }
+
+        & .default {
+          flex-grow: 1;
+        }
+
+        & .icon {
+          width: 14px;
+          height: 14px;
+        }
+
+        & .edit {
+          margin-right: 30px;
+        }
+      }
+    }
+
+    & .default.active .icon {
+      color: $redDark;
+    }
+  }
+
+  & .bottomBox .count {
+      @include font(null, $fontSize + 2, $clF);
+      @include position (absolute, 'br', 0, 15px, null, 50px, 0);
+      line-height: 50px;
+  }
+}

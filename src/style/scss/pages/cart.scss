@@ -1,0 +1,202 @@
+/*
+ * author: nancyzeng
+ * date:2019/4/24
+ */
+
+@charset "utf-8";
+
+#cartPage {
+  min-height: 100%;
+  box-sizing: border-box;
+  background-color: $clF5;
+  padding-bottom: env(safe-area-inset-bottom); //为底下圆弧的高度 34px
+
+  // & .van-button {
+  //   border-radius: 0;
+  // }
+
+  & .editBox {
+    @include displayFlex (flex, center, center);
+    height: 45px;
+    background-color: $clF;
+    border-bottom: 1px $clF5 solid;
+    padding: 0 15px;
+    color: #666;
+    font-size: $fontSize - 1;
+
+    & .icon {
+      width: 18px;
+      height: 18px;
+      position: relative;
+    }
+  }
+  & .cardBox {
+    margin-bottom: 10px;
+
+    & .listBox {
+      @include displayFlex (flex, center, center);
+      border-bottom: 1px $clF5 solid;
+      background-color: $clF;
+      padding: 15px;
+
+      & .right {
+        @include flexBasis(14px);
+
+        & .icon {
+          width: 14px;
+          height: 14px;
+          color: $cl6;
+        }
+
+        & .icon.active {
+          color: $redDark;
+        }
+        & .icon.disabled{
+          color:#B1B1B1;
+        }
+      }
+
+      & .left {
+        @include flexBasis(80px);
+        margin-left: 10px;
+
+        & .ratioBox {
+          & .box {
+            & .tag {
+              @include position (absolute, 'bl', 0, 0, 100%, 20px, null);
+              background-color: rgba($color: #000000, $alpha: 0.3);
+              font-size: $fontSize - 4;
+              color: $clF;
+              text-align: center;
+              line-height: 20px;
+
+            }
+            & .lost_radio{
+              @include position (absolute, 'tl', 50%, 50%, null, null,50%);
+              background-color: rgba($color: #000000, $alpha: 0.4);
+              color: $clF;
+              text-align: center;
+              width:60px;
+              height:60px;
+              line-height: 60px;
+              margin-top:-30px;
+              margin-left: -30px;
+            }
+          }
+        }
+      }
+
+      & .center {
+        margin-left: 10px;
+
+        & .title {
+          @include twoLines;
+          @include font("PingFangBold", $fontSize, #333);
+          position: relative;
+          top: -5px;
+
+          & .text {
+            @include twoLines;
+          }
+        }
+
+        & .subTitle {
+          @include font(null, $fontSize - 2, $redDark);
+          line-height: 17px;
+          height: 17px;
+
+        }
+
+        & .info {
+          position: relative;
+          @include displayFlex(flex,space-between,flex-end)
+          & .history {
+            @include font("PingFangBold", $fontSize + 1, $redDark);
+          }
+          & .lost{
+            @include font("PingFangBold", $fontSize + 2, #B1B1B1);
+            flex-grow: 1;
+          }
+          & .action {
+            margin-top: 5px;
+            min-width: 92px;
+            // @include position (absolute, 'br', 0, 0, null, null, null);
+          }
+        }
+
+      }
+
+    }
+
+    & .listBox.total {
+      padding: 0 15px;
+      height: 45px;
+
+      & .center {
+        margin-left: 10px;
+        @include textOverflow;
+
+        & .title {
+          @include textOverflow;
+          @include font("PingFangBold", $fontSize, #333);
+          position: relative;
+          top: 0;
+          display: block;
+
+          & .text {
+            @include textOverflow;
+            display: block;
+          }
+        }
+
+      }
+
+    }
+    & .capping{
+      padding:5px 15px;
+      background-color: #FFF;
+      @include displayFlex(flex,space-between,center)
+
+      .capping_left{
+        width:80%;
+        @include textOverflow;
+        .tags{
+          display: inline-block;
+          padding:0px 5px;
+          text-align: center;
+          line-height: 17px;
+          font-size: $fontSize - 2;
+          border-radius: 2px;
+          background-color: $redDark;
+          color:#FFF;
+        }
+        .desc{
+          display: inline-block;
+          font-size: $fontSize - 2;
+          color:$cl6;
+        }
+      }
+      .capping_right{
+        font-size: $fontSize - 1;
+        color:$redDark;
+      }
+    }
+  }
+
+  & .totalBox {
+    @include font(null, $fontSize - 1, #666);
+
+    & .icon {
+      width: 14px;
+      height: 14px;
+      padding: 0 5px 0 15px;
+    }
+
+    & .icon.active {
+      color: $redDark;
+    }
+  }
+  .price{
+    color:$redDark;
+  }
+}

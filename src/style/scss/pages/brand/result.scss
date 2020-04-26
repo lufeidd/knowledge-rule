@@ -1,0 +1,166 @@
+/*
+ * author: lufei
+ * date:2019/4/28
+ */
+
+#resultPage{
+  background-color: $clF5 ;
+  min-height: 100%;
+  box-sizing: border-box;
+
+    .searhResult{
+      position: relative;
+      background-color: #fff;
+      border-bottom: 5px solid $clF5;
+      box-sizing: border-box;
+      padding: 8px 15px;
+      input{
+        width: 85%;
+        height: 28px;
+        box-sizing: border-box;
+        border: none;
+        padding-left:25px;
+        padding-right: 15px;
+        background-color: $clF5;
+        border-radius: 14px;
+      }
+      .cancel{
+        color: $cl6;
+        font-size: $fontSize + 2;
+        margin-left: 5px;
+      }
+      .icon.searchIcon{
+        position: absolute;
+        left: 20px;
+        color: $cl9;
+        top: 50%;
+        margin-top: -5px;
+      }
+    }
+    .content{
+      @include displayFlex(flex, null, null);
+      background-color: #fff;
+      padding: 15px;
+      .ratiobox {
+        min-width: 95px;
+        .bookImg {
+          display: block;
+          @include ratioBox (100%, 61.58%, 1px solid $clF5, contain, $clF, null);
+          border-radius: 2.5px;
+        }
+      }
+      .right{
+        flex-grow: 1;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: space-between;
+        .text{
+          @include font("PingFangBold", $fontSize, $cl3);
+          @include twoColtextOverflow;
+        }
+        .pinpai{
+          font-size: $fontSize - 1;
+          color: $cl6;
+        }
+        .nice{
+          color: $cl9;
+          font-size: $fontSize - 2;
+          .price{
+            @include font(null, $fontSize, $redLight);
+          }
+          .comment,
+          .good{
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .content.book{
+      .ratiobook {
+        min-width: 95px;
+        .bookimg {
+          display: block;
+          @include ratioBox (100%, 100%, 1px solid $clF5, contain, $clF, null);
+          border-radius: 2.5px;
+        }
+      }
+    }
+    .content.audio{
+      .ratiobox {
+        min-width: 95px;
+        .bookImg {
+          display: block;
+          @include ratioBox (100%, 61.8%, 1px solid $clF5, contain, $clF, null);
+          border-radius: 2.5px;
+        }
+      }
+      .nice{
+        @include displayFlex(flex, space-between, flex-end);
+        .price{
+          color:$redLight;
+        }
+      }
+    }
+    .content.ebook{
+      .ratiobox {
+        min-width: 25%;
+        .bookImg {
+          display: block;
+          @include ratioBox (100%, 133.33%, 1px solid $clF5, contain, $clF, null);
+          border-radius: 2.5px;
+        }
+      }
+      .nice{
+        @include displayFlex(flex, space-between, flex-end);
+        .price{
+          color:$redLight;
+        }
+      }
+    }
+  .van-tabs__wrap--scrollable .van-tab{
+      flex:0;
+  }
+  // 综合列表
+  .summaryList.huoba{
+    margin-top: 0;
+  }
+  .summaryList{
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 15px;
+    .head{
+      @include textOverflow;
+      .verticleLine{
+        display: inline-block;
+        width: 2.5px;
+        height: 11px;
+        background-color: $redLight;
+        border-radius: 2.5px;
+      }
+      .brandName{
+        font-size: $fontSize + 2;
+      }
+    }
+    .brandContent{
+      padding:10px 0;
+      @include displayFlex(flex, null, center);
+      img{border-radius: 50%;}
+      .bname{
+        font-size: $fontSize + 1;
+        margin-left: 10px;
+        @include textOverflow;
+      }
+    }
+    .readMore{
+      color: $cl9;
+      text-align: center;
+      margin-top: 15px;
+      .icon{font-size: $fontSize - 2;}
+    }
+    .content{
+      padding: 15px 0;
+    }
+  }
+}
