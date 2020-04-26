@@ -23,25 +23,71 @@ export default {
   components: {
     HelloWorld
   },
-  name: 'App',
+  name: "App",
   data() {
     return {
       activeIndex: 0
     };
   },
-  mounted () {
+  mounted() {
+    let aWidth = 0;
+    $.each($("#anchor .box a"), function(index) {
+      aWidth += $(this).outerWidth();
+    });
+    aWidth += 27;
+    $("#anchor .box").css("width", aWidth);
   },
   methods: {
     setActive(ai) {
       this.activeIndex = ai;
+      let sLeft = $("#anchor .box a")
+        .eq(ai)
+        .offset().left;
+      $("#anchor").scrollLeft(sLeft);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" src="@/style/scss/app.scss"></style>
 
 <style lang="scss">
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+	width: 0px;
+	height: 0;
+}
+
+::-ms-scrollbar {
+	width: 0px;
+	height: 0;
+}
+
+::scrollbar[orient="vertical"] {
+	min-width: 0px !important;
+}
+
+/* 滚动条的滑轨背景颜色 */
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, .05);
+}
+
+/* 滑块颜色 */
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, .15);
+}
+
+/* 滑轨两头的监听按钮颜色 */
+::-webkit-scrollbar-button {
+	height: 0;
+	background-color: rgba(0, 0, 0, .05);
+}
+
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+::-webkit-scrollbar-corner {
+	background-color: black;
+}
 body {
   margin: 0;
 }
@@ -68,6 +114,7 @@ menu#anchor {
   display: inline-block;
   padding: 8px;
   color: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
 }
 
 #anchor a.active,
