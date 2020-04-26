@@ -13,7 +13,7 @@ import './style/iconfont/iconfont'
 
 Vue.config.productionTip = false
 
-import { Button, Cell, CellGroup, RadioGroup, Radio, Popup, Step, Steps, Tab, Tabs, Search } from 'vant'
+import { Button, Cell, CellGroup, RadioGroup, Radio, Popup, Step, Steps, Tab, Tabs, Search, Tag } from 'vant'
 
 Vue.use(Button)
 Vue.use(Cell).use(CellGroup)
@@ -23,6 +23,7 @@ Vue.use(Popup)
 Vue.use(Step).use(Steps)
 Vue.use(Tab).use(Tabs)
 Vue.use(Search)
+Vue.use(Tag)
 
 /* eslint-disable no-new */
 new Vue({

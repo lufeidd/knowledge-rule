@@ -39,9 +39,9 @@
       </div>
     </article>
     <!-- 搜索导航 -->
-    <div id="search">
+    <article id="search">
       <p>搜索导航</p>
-      <div class="head">搜索导航一</div>
+      <van-tag mark>搜索导航一</van-tag>
       <div class="huoba-search">
         <van-search
           v-model="value"
@@ -58,7 +58,7 @@
           </div>
         </van-search>
       </div>
-      <div class="head">搜索导航二</div>
+      <van-tag mark>搜索导航二</van-tag>
       <div class="huoba-search">
         <van-search
           v-model="value"
@@ -76,12 +76,12 @@
           </div>
         </van-search>
       </div>
-    </div>
+    </article>
     <!-- 商品列表 -->
     <article id="goods-list">
       <p>商品列表</p>
       <!-- 列表一 -->
-      <div class="head">列表一</div>
+      <van-tag mark>列表一</van-tag>
       <div class="huoba-goods-list huoba-goods-list-one">
         <div class="huoba-goods-list-left">
           <div class="ratioBox">
@@ -106,7 +106,7 @@
         </div>
       </div>
       <!-- 列表二 -->
-      <div class="head">列表二</div>
+      <van-tag mark>列表二</van-tag>
       <div class="huoba-goods-list huoba-goods-list-two">
         <div class="huoba-goods-list-left">
           <div class="ratioBox">
@@ -132,7 +132,7 @@
         </div>
       </div>
       <!-- 列表三 -->
-      <div class="head">列表三</div>
+      <van-tag mark>列表三</van-tag>
       <div class="huoba-goods-list huoba-goods-list-three">
         <div class="huoba-goods-list-left">
           <div class="ratioBox">
@@ -155,7 +155,7 @@
         </div>
       </div>
       <!-- 列表四 -->
-      <div class="head">列表四</div>
+      <van-tag mark>列表四</van-tag>
       <div class="huoba-goods-list huoba-goods-list-four">
         <div class="huoba-goods-list-left">
           <div class="huoba-goods-list-imgs" v-for="(item,index) in 3" :key="index">
@@ -183,7 +183,7 @@
         </div>
       </div>
       <!-- 列表五 -->
-      <div class="head">列表五</div>
+      <van-tag mark>列表五</van-tag>
       <div class="huoba-goods-list huoba-goods-list-five">
         <div class="huoba-goods-list-check">
           <svg class="icon checked" aria-hidden="true" v-if="is_checked == 1" @click="checkGoods">
@@ -245,7 +245,7 @@
         </div>
       </div>
       <!-- 列表六 -->
-      <div class="head">列表六</div>
+      <van-tag mark>列表六</van-tag>
       <div class="huoba-goods-list huoba-goods-list-six">
         <div class="huoba-goods-list-content">
           <div class="huoba-goods-list-left">
@@ -265,7 +265,7 @@
         </div>
       </div>
       <!-- 列表七 -->
-      <div class="head">列表七</div>
+      <van-tag mark>列表七</van-tag>
       <div class="huoba-goods-list huoba-goods-list-seven">
         <swiper class="swiperTags" :options="swiperOption" ref="mySwiper">
           <swiper-slide v-for="(item,index) in 8" :key="index">
@@ -289,7 +289,7 @@
     <article id="cell">
       <p>单元格</p>
       <!-- 单元格一 -->
-      <div class="head">单元格一</div>
+      <van-tag mark>单元格一</van-tag>
       <div class="huoba-cell">
         <div class="huoba-cell-title">
           <div class="huoba-cell-headImg">
@@ -329,10 +329,10 @@
         <div class="huoba-cell-value">已退款</div>
       </div>
       <!-- 单元格二 -->
-      <div class="head">单元格二</div>
+      <van-tag mark>单元格二</van-tag>
       <van-cell title="货物状态：" value="请选择" is-link></van-cell>
       <!-- 单元格三 -->
-      <div class="head">单元格三</div>
+      <van-tag mark>单元格三</van-tag>
       <div class="huoba-cell huoba-cell-three">
         <div class="huoba-cell-left">
           <svg class="icon" aria-hidden="true">
@@ -391,7 +391,7 @@
         </div>
       </div>
       <!-- 单元格四 -->
-      <div class="head">单元格四</div>
+      <van-tag mark>单元格四</van-tag>
       <div class="huoba-cell huoba-cell-four">
         <div class="huoba-cell-left">
           <svg class="icon" aria-hidden="true">
@@ -415,7 +415,7 @@
         </div>
       </div>
       <!-- 单元格五 -->
-      <div class="head">单元格五</div>
+      <van-tag mark>单元格五</van-tag>
       <div class="huoba-cell huoba-cell-five">
         <span class="huoba-cell-text">此订单共99件商品，点击查看</span>
         <svg class="icon" aria-hidden="true">
@@ -423,7 +423,7 @@
         </svg>
       </div>
       <!-- 单元格六 -->
-      <div class="head">单元格六</div>
+      <van-tag mark>单元格六</van-tag>
       <div class="huoba-cell-six">
         <van-cell title="商品总额" value="¥95.00"></van-cell>
         <van-cell title="活动立减" value="-¥22.30"></van-cell>
@@ -437,7 +437,7 @@
           </span>
         </div>
       </div>
-      <div class="head">单元格七</div>
+      <van-tag mark>单元格七</van-tag>
       <div class="huoba-cell-seven">
         <div class="huoba-cell-head huoba-cell-line">实物商品</div>
         <div class="huoba-cell-order-num huoba-cell-line">
@@ -497,7 +497,7 @@
     <!-- 步骤条 -->
     <article id="steps">
       <p>步骤条</p>
-      <div class="head">物流信息</div>
+      <van-tag mark>物流信息</van-tag>
       <div class="huoba-logtic-info">
         <van-steps direction="vertical" :active="0" active-color="#F05654">
           <van-step>
@@ -517,7 +517,7 @@
           </van-step>
         </van-steps>
       </div>
-      <div class="head">退款进度</div>
+      <van-tag mark>退款进度</van-tag>
       <div class="huoba-refund-step">
         <van-steps direction="vertical" :active="0" active-color="#F05654">
           <van-step>
