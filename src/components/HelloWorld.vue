@@ -11,6 +11,9 @@
       <div>
         <button class="huoba-btn huoba-btn-three">按钮三</button>
       </div>
+      <div>
+        <button class="huoba-btn huoba-btn-three disabled">按钮三禁用</button>
+      </div>
     </article>
     <!-- 按钮导航 -->
     <article id="button-nav">
@@ -361,7 +364,7 @@
         </div>
         <div class="huoba-cell-mid">
           <div class="huoba-cell-logticinfo">
-            <span>这里是物流信息这里是物流信息这里是物流信息这里是物流信息这里是信息这里是物流物…</span>
+            <span>这里是物流信息这里是物流信息这里是物流信息这里是物流信息这里是信息这里是物流物</span>
           </div>
           <div class="huoba-cell-timeinfo">2019-2-13 20:34:34</div>
         </div>
@@ -449,6 +452,54 @@
         <div class="huoba-cell-payway huoba-cell-line">下单方式：微信支付</div>
         <div class="huoba-cell-paytime huoba-cell-line">支付时间：2019-2-13 20:34:34</div>
       </div>
+      <van-tag mark>单元格八</van-tag>
+      <div class="huoba-cell huoba-cell-eight">
+        <div class="huoba-cell-left">发票类型：</div>
+        <div class="huoba-cell-mid">
+          <span>电子普通发票</span>
+        </div>
+      </div>
+      <div class="huoba-cell huoba-cell-eight">
+        <div class="huoba-cell-left">发票内容：</div>
+        <div class="huoba-cell-mid">
+          <span>商品明细</span>
+        </div>
+      </div>
+      <div class="huoba-cell huoba-cell-eight">
+        <div class="huoba-cell-left">抬头内容：</div>
+        <div class="huoba-cell-mid">
+          <van-radio-group v-model="radio_state">
+            <van-radio name="1">
+              <svg
+                :class="props.checked ? 'icon check':'icon'"
+                aria-hidden="true"
+                slot="icon"
+                slot-scope="props"
+              >
+                <use :xlink:href="props.checked ? '#icon-radio-block' : '#icon-guanbi'" />
+              </svg>
+              个人
+            </van-radio>
+            <van-radio name="2">
+              <svg
+                :class="props.checked ? 'icon check':'icon'"
+                aria-hidden="true"
+                slot="icon"
+                slot-scope="props"
+              >
+                <use :xlink:href="props.checked ? '#icon-radio-block' : '#icon-guanbi'" />
+              </svg>
+              单位
+            </van-radio>
+          </van-radio-group>
+        </div>
+      </div>
+      <div class="huoba-cell huoba-cell-eight">
+        <div class="huoba-cell-left">抬头内容：</div>
+        <div class="huoba-cell-mid">
+          <input type="text" placeholder="请填写单位名称" />
+        </div>
+      </div>
     </article>
     <!-- tab标签页切换 -->
     <article id="tabs">
@@ -502,7 +553,7 @@
         <van-steps direction="vertical" :active="0" active-color="#F05654">
           <van-step>
             <template slot="active-icon">
-              <span class="icon"></span>
+              <span class="huoba-refund-step-icon"></span>
             </template>
             <div>【浙江省杭州市第五公司】已收入,派件员：刘海虎，下一站余 杭区三墩</div>
             <div class="logtic-time">2016-07-12 12:40</div>
@@ -522,7 +573,7 @@
         <van-steps direction="vertical" :active="0" active-color="#F05654">
           <van-step>
             <template slot="active-icon">
-              <span class="icon"></span>
+              <span class="huoba-refund-step-icon"></span>
             </template>
             <div class="huoba-refund-step-title">退款成功</div>
             <div class="huoba-refund-step-content">
@@ -609,6 +660,15 @@
         </van-steps>
       </div>
     </article>
+    <!-- 选择器 -->
+    <article id="picker">
+      <p>选择器</p>
+      <van-tag mark>选择器</van-tag>
+      <div style="padding:10px 15px;" @click="picker_show = true">点击触发</div>
+      <van-popup v-model="picker_show" position="bottom">
+        <van-picker :columns="columns" show-toolbar title="物流公司" @cancel="picker_show = false" @confirm="onConfirm" />
+      </van-popup>
+    </article>
   </div>
 </template>
 <style>
@@ -645,11 +705,14 @@ export default {
       orangeLight: "#f08054",
       is_checked: 0,
       show: false,
+      picker_show: false,
       radio: "0",
       swiperOption: {
-        slidesPerView: 4.3
+        slidesPerView: "auto"
       },
-      value: ""
+      value: "",
+      radio_state: "1",
+      columns: ["顺丰速递", "中通速递", "圆通速递", "韵达快递", "其他"]
     };
   },
   props: {
@@ -665,7 +728,9 @@ export default {
     close() {
       this.show = false;
     },
-    onSearch() {}
+    onSearch() {},
+    onConfirm(){
+    }
   }
 };
 </script>
