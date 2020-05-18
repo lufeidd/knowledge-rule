@@ -497,7 +497,7 @@
       <div class="huoba-cell huoba-cell-eight">
         <div class="huoba-cell-left">抬头内容：</div>
         <div class="huoba-cell-mid">
-          <input type="text" placeholder="请填写单位名称" />
+          <input type="text" placeholder="请填写收票人的手机号码" />
         </div>
       </div>
     </article>

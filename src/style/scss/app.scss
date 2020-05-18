@@ -727,6 +727,7 @@ img {
     }
   }
   & .swiper-container{
+    margin:unset;
     & .swiper-slide{
       margin-right: 10px;
       width: 70px !important;
@@ -829,6 +830,9 @@ img {
     & .icon{
       font-size: $fontSize + 6;
     }
+    & .huoba-cell-state{
+      font-size: $fontSize + 4;
+    }
   }
   & .huoba-cell-mid{
     font-size: $fontSize - 2;
@@ -849,6 +853,9 @@ img {
         @include font(null,$fontSize - 3,$redDark);
         margin-right: 6px;
       }
+    }
+    & .huoba-cell-state{
+      font-size: $fontSize + 4;
     }
   }
   & .huoba-cell-right{
@@ -934,7 +941,6 @@ img {
     flex-grow: 1;
     @include textOverflow;
     & .icon{
-      top:0;
       font-size: 18px;
       color: $cl9;
     }
@@ -956,6 +962,9 @@ img {
       & .van-radio:last-child{
         margin-right: 0;
       }
+    }
+    & .money{
+      color: $redDark;
     }
   }
 }
